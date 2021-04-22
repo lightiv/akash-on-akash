@@ -2,11 +2,11 @@
 
 pushd /node
 
-export AKASH_HOME="${PWD?}"
+export DESMOS_HOME="${PWD?}"
 
 
 # This fails immediately, but creates the node keys
-akash init "${AKASH_MONIKER:-unknown}"
+desmos init "${AKASH_MONIKER:-unknown}"
 
 set -xe
 
@@ -20,8 +20,8 @@ set -xe
 
 if test -n "$ENABLE_ID_SERVER" ; then
   mkdir web
-  akash tendermint show-node-id   > web/node-id.txt
-  akash tendermint show-validator > web/validator-pubkey.txt
+  desmos tendermint show-node-id   > web/node-id.txt
+  desmos tendermint show-validator > web/validator-pubkey.txt
   pushd web
   # Run a web server so that the file can be retrieved
   python3 -m http.server 8080 &
@@ -36,4 +36,4 @@ cat config.toml | python3 -u ./patch_config_toml.py > config/config.toml
 cp -v app.toml config/
 
 # Run the node for real now 
-exec akash start
+exec desmos start

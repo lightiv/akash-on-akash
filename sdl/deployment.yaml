@@ -2,21 +2,21 @@
 version: "2.0"
 
 services:
-  akash:
+  desmos:
     image: ghcr.io/ovrclk/akash-on-akash:v0.0.8
     env:
       # - STATE_SYNC=1
-      - SEEDS_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/seed-nodes.txt
-      - SYNC_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/rpc-nodes.txt
-      - GENESIS_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json
+      - SEEDS_URL=https://raw.githubusercontent.com/lightiv/akash-on-akash/desmos/seed-nodes.txt
+      - SYNC_URL=https://raw.githubusercontent.com/lightiv/akash-on-akash/desmos/rpc-nodes.txt
+      - GENESIS_URL=https://raw.githubusercontent.com/desmos-labs/morpheus/master/morpheus-13001/genesis.json
       - ENABLE_ID_SERVER=true
-      # - AKASH_PRUNING=custom
-      # - AKASH_PRUNING_INTERVAL=10
-      # - AKASH_PRUNING_KEEP_EVERY=50
-      # - AKASH_PRUNING_KEEP_RECENT=10
-      # - AKASH_STATE_SYNC_SNAPSHOT_INTERVAL=50
-      # - AKASH_STATE_SYNC_KEEP_RECENT=10
-      # - AKASH_SEED_MODE=true
+      # - DESMOS_PRUNING=custom
+      # - DESMOS_PRUNING_INTERVAL=10
+      # - DESMOS_PRUNING_KEEP_EVERY=50
+      # - DESMOS_PRUNING_KEEP_RECENT=10
+      # - DESMOS_STATE_SYNC_SNAPSHOT_INTERVAL=50
+      # - DESMOS_STATE_SYNC_KEEP_RECENT=10
+      # - DESMOS_SEED_MODE=true
     expose:
       - port: 8080
         as: 80
@@ -44,7 +44,7 @@ profiles:
         memory:
           size: 2Gi
         storage:
-          size: 32Gi
+          size: 128Gi
   placement:
     dcloud:
       attributes:
