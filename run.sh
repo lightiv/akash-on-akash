@@ -34,6 +34,7 @@ cat config.toml | python3 -u ./patch_config_toml.py > config/config.toml
 
 # Copy over all the other filesthat the node needs
 cp -v app.toml config/
+cp -v /node/genesis.json config/
 
 # Run the node for real now 
 exec desmos start

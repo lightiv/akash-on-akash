@@ -1,4 +1,4 @@
-STATE_SYNC=1
+STATE_SYNC=0
 SEEDS_URL=https://raw.githubusercontent.com/lightiv/akash-on-akash/desmos/seed-nodes.txt
 SYNC_URL=https://raw.githubusercontent.com/lightiv/akash-on-akash/desmos/rpc-nodes.txt
 GENESIS_URL=https://raw.githubusercontent.com/desmos-labs/morpheus/master/morpheus-13001/genesis.json

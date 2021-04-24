@@ -1,3 +1,3 @@
 
 build:
-	docker build --tag akash-on-akash:local .
+	docker build --tag desmos-on-akash:local .
